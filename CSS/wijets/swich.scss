@@ -1,0 +1,36 @@
+.mainSwichWijetWrap {
+    width: 98px;
+    background: #303952;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .swichWrap {
+        width: 64px;
+        height: 120px;
+        border-radius: 32px;
+        background: #4b6584;
+
+        .swich {
+            bottom: 0;
+            transition: .5s ease-out;
+            position: relative;
+            width: 68px;
+            height: 68px;
+            margin-left: -2px;
+            border-radius: 50%;
+            background: #fc5c65;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            color: #fff;
+            user-select: none;
+            cursor: pointer;
+            box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.4),
+                2px 5px 13px rgba(0, 0, 0, 0.1),
+                2px 7px 23px rgba(0, 0, 0, 0.1),
+                0px 0px 30px #fc5c65;
+        }
+    }
+}

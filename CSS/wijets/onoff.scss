@@ -1,0 +1,51 @@
+.mainOnOffWijetWrap {
+    width: 98px;
+    background: #303952;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .OnOffWrap {
+        width: 46px;
+        height: 108px;
+        box-shadow: 0px 0px 6px 0.5px #00000060;
+        background: #2f3952;
+        border-radius: 23px;
+        padding: 3px;
+        transform: rotate(0deg);
+
+        .onOffButton {
+            cursor: pointer;
+            position: relative;
+            font-weight: 600;
+            margin-bottom: 1px;
+            font-size: 14px;
+            user-select: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: #1abc9c;
+            border-radius: 50% 50% 0 0;
+            box-shadow: 0px 0px 1px #34495e;
+
+            &:active {
+                box-shadow: none;
+                transform: scale(0.98);
+            }
+        }
+
+        .onOffButtonDown {
+            border-radius: 0 0 50% 50%;
+        }
+
+        .lightIndicator {
+            width: 40px;
+            height: 20px;
+            background: #1abc9c;
+            margin-top: 1px;
+            margin-bottom: 1px;
+        }
+    }
+}

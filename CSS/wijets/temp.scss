@@ -1,0 +1,169 @@
+.mainTempWijetWrap {
+    width: 98px;
+    background: #323052;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .temp {
+        width: 82px;
+        height: 48px;
+        background: #fff;
+        border-radius: 8px 8px 8px 0;
+        border: 3px solid #0abde3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 5px #14141450;
+
+        span {
+            font-size: 16px;
+            margin-bottom: -4px;
+            color: #222f3e;
+        }
+
+        .showVal {
+            font-size: 22px;
+            font-family: monospace, 'Fira Sans', sans-serif;
+            margin-bottom: 0px;
+        }
+    }
+}
+
+.mainHumWijetWrap {
+    width: 98px;
+    background: #323052;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .hum {
+        width: 82px;
+        height: 48px;
+        background: #fff;
+        border-radius: 8px 8px 8px 0;
+        border: 3px solid #1dd1a1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 5px #14141450;
+
+        span {
+            font-size: 16px;
+            margin-bottom: -4px;
+            color: #222f3e;
+        }
+
+        .showVal {
+            font-size: 22px;
+            font-family: monospace, 'Fira Sans', sans-serif;
+            margin-bottom: 0px;
+        }
+    }
+}
+
+.mainPressWijetWrap {
+    width: 98px;
+    background: #323052;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .press {
+        width: 82px;
+        height: 48px;
+        background: #fff;
+        border-radius: 8px 8px 8px 0;
+        border: 3px solid #ff6b6b;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 5px #14141450;
+
+        span {
+            font-size: 16px;
+            margin-bottom: -4px;
+            letter-spacing: -2px;
+            color: #222f3e;
+        }
+
+        .showVal {
+            font-size: 22px;
+            font-family: monospace, 'Fira Sans', sans-serif;
+            margin-bottom: 0px;
+            letter-spacing: 0px;
+        }
+    }
+}
+
+.mainValDispWijetWrap {
+    width: 98px;
+    background: #323052;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .valDisp {
+        width: 82px;
+        height: 48px;
+        background: #fff;
+        border-radius: 8px 8px 8px 0;
+        border: 3px solid #576574;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 5px #14141450;
+
+        .showVal {
+            font-size: 22px;
+            font-family: monospace, 'Fira Sans', sans-serif;
+            margin-bottom: 0px;
+            letter-spacing: 0px;
+        }
+
+        span {
+            font-size: 16px;
+            margin-bottom: -4px;
+            letter-spacing: -1px;
+            color: #222f3e;
+        }
+    }
+}
+
+.mainLightWijetWrap {
+    width: 98px;
+    background: #323052;
+    padding-top: 20px;
+
+    .light {
+        width: 20px;
+        height: 20px;
+        border-radius: 50% 50% 0 0;
+        background: #fff9e9;
+        margin: auto;
+    }
+
+    .lightBorder {
+        width: 26px;
+        height: 3px;
+        background: #ebe5d5;
+        margin: auto;
+        border-radius: 1px;
+    }
+
+    .lightLengA {
+        float: left;
+        width: 1.5px;
+        height: 60px;
+        background: silver;
+        margin-left: 44px;
+    }
+
+    .lightLengK {
+        float: right;
+        width: 1.5px;
+        height: 45px;
+        background: silver;
+        margin-right: 44px;
+    }
+}

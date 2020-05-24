@@ -1,0 +1,47 @@
+.mainTapeWijetWrap {
+    width: 98px;
+    background: #303952;
+
+    .tapeWrap {
+        background: #4b6584;
+        width: 40px;
+        height: 200px;
+        // margin: auto;
+        transform: rotate(-25deg);
+        margin-top: -35px;
+        position: relative;
+        left: 29px;
+        box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4),
+            -1px -5px 13px rgba(0, 0, 0, 0.1),
+            -1px 7px 23px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        padding-top: 12px;
+        cursor: pointer;
+
+        div {
+            width: 20px;
+            height: 20px;
+            background: red;
+            margin: auto;
+            margin-top: 8px;
+            background: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 2px;
+
+            span {
+                width: 70%;
+                height: 70%;
+                border-radius: 50%;
+                background-color: #ffd9ab;
+                transition: .1s ease-out;
+            }
+        }
+    }
+}
+
+.tapeActive {
+    box-shadow: 0 0 8px 5px #ffddb4,
+        0 0 15px 10px #ffddb4;
+}

@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>nWASD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/Icons/nWASD_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Varela+Round&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../Packages/fontawesome-free-5.13.0-web/fontawesome-free-5.13.0-web/css/all.css">
+    <link rel="stylesheet" href="../CSS/nWASD.css">
+    <link rel="stylesheet" href="../CSS/wijets.css">
+</head>
+
+<body>
+    <div class="tagline">„ IOT не вставая с дивана! “</div>
+    <div class="userMenu userMenu_phone"><i class="fas fa-user-circle"></i></div>
+    <div class="phoneMenu">
+        <div id="m0"><i class="fas fa-home"></i></div>
+        <div id="m1"><i class="fas fa-seedling"></i></div>
+        <div id="m2"><i class="fas fa-desktop"></i></div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler navbarButton" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="userMenu"><i class="fas fa-user-circle"></i></div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto navUl">
+                <li class="nav-item" id="li0">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item" id="li1">
+                    <a class="nav-link" href="#">Grow</a>
+                </li>
+                <li class="nav-item" id="li2">
+                    <a class="nav-link" href="#">Server</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="modal fade" id="modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Настройка виджета</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="modalItemWrap">
+                        <span class="modalItemTitle">Выбрать плату подключения:</span>
+                        <select name="esp" id="esp"></select>
+                    </div>
+                    <hr>
+                    <div class="modalItemWrap">
+                        <span class="modalItemTitle">Hardware/virtual pin:</span>
+                        <input type="number" id="pin" min="2" max="21">
+                    </div>
+                    <hr>
+                    <div class="modalItemWrap">
+                        <span class="modalItemTitle">Имя виджета:</span>
+                        <input type="text" id="wijetTitle">
+                    </div>
+                    <div class="modalItemWrap">
+                        <img src="../Images/pins.png" alt="распиновка">
+                    </div>
+                    <div class="modalInfo"><span class="line"></span>
+                        <span>Дополнительно:</span>
+                        <span class="line"></span></div>
+                    <div class="modalItemWrap">
+                        <span class="modalItemTitle">Значение 1:</span>
+                        <input type="text" id="timeLine1">
+                    </div>
+                    <hr>
+                    <div class="modalItemWrap">
+                        <span class="modalItemTitle">Значение 2:</span>
+                        <input type="text" id="timeLine2">
+                    </div>
+                    <div class="modalInfo"><span class="line"></span>
+                        <span>Расположение:</span>
+                        <span class="line"></span></div>
+                    <div class="modalItemWrap">
+                        <span class="modalItemTitle">Переместить на позицию:</span>
+                        <input type="number" id="moveWijetTo">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger deleteWijet" data-dismiss="modal">Удалить
+                        виджет</button>
+                    <button type="button" class="btn btn-secondary saveWijetSettings"
+                        data-dismiss="modal">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menuPanel rightMenuPanel">
+        <div class="titleContainer" id="rightTitle">
+            <div class="titleIcon leftCloseIcon closeSideMenuButton"><i class="fas fa-arrow-right"></i></div>
+        </div>
+        <div class="vidgetsContainer"></div>
+    </div>
+    <div class="menuPanel leftMenuPanel">
+        <div class="titleContainer">
+            <div class="titleIcon rightCloseIcon closeSideMenuButton"><i class="fas fa-arrow-left"></i></div>
+        </div>
+        <div class="navLeftContainer"></div>
+    </div>
+    <div class="userSettings">
+        <div class="userSettingsBackground">
+            <img src="../Images/nWASD_home.png" alt="">
+            <img src="../Images/nWASD_grow.png" alt="">
+            <img src="../Images/nWASD_server.png" alt="">
+        </div>
+        <div class="userSettingsMain">
+            <div class="userSettingsMainItem"> Имя аккаунта: &nbsp;<span id="nameOfAccount"></span>
+            </div>
+            <div class="userSettingsMainItem"> Статус аккаунта: &nbsp;<span id="statusOfAccount"></span>
+            </div>
+            <div class="hr"></div>
+            <div class="userSettingsMainItem"> Всего комнат: &nbsp;<span id="flatsOfAccount"></span>
+            </div>
+            <div class="userSettingsMainItem"> Всего кругов полива: &nbsp;<span id="roundsOfAccount"></span>
+            </div>
+            <div class="hr"></div>
+            <div class="userSettingsMainItem"> Уведомления:<div class="userSettingsMainSwitch">
+                    <div id="notifyOfAccount"></div>
+                </div>
+            </div>
+            <div class="userSettingsMainItem"> Ждать ответа платы:<div class="userSettingsMainSwitch">
+                    <div id="responseModeOfAccount"></div>
+                </div>
+            </div>
+            <div class="userSettingsMainItem slHiden"> Расширенные слоганы:<div class="userSettingsMainSwitch">
+                    <div id="themeOfAccount"></div>
+                </div>
+            </div>
+            <div class="hr"></div>
+            <div class="userSettingsMainItem userSettingsLink" id="resetPassOfAccount">
+                <p>Поменять пароль</p>&nbsp;<i class="fas fa-sync-alt"></i>
+            </div>
+            <div class="userSettingsMainItem userSettingsLink" id="leaveOfAccount">
+                <p>Выйти из аккаунта</p>&nbsp;<i class="fas fa-sign-out-alt"></i>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid fullHeight">
+        <div class="row">
+            <div class="col-11 smOnly"></div>
+            <div class="col-md-2 navPanelLeft userInterfaceVisible">
+                <div class="titleContainer" id="leftTitle"><span>Комната</span></div>
+                <div class="navLeftContainer">
+                    <!-- <div class="flatMainWrap">
+                        <i class="fas fa-home"></i>
+                        <span>1</span>
+                    </div> -->
+                </div>
+            </div>
+            <div class="col-12 col-sm-9 col-md-7 mainContainer userInterfaceVisible">
+                <div class="titleContainer mainTitle">
+                    <div class="titleIcon leftTitleIcon"><i class="fas fa-th-list" id="leftSideMenuButton"></i></div>
+                    <span>Умный дом</span>
+                    <div class="titleIcon rightTitleIcon"><i class="fas fa-plus" id="rightSideMenuButton"></i></div>
+                </div>
+                <div class="blockContainer">
+                    <!-- кнопка
+                    шторка 
+                    <div class="blockItem">
+                        <div class="mainWijetWrap mainBlindWijetWrap">
+                            <div class="blindDecore"></div>
+                            <div class="blindWrap">
+                                <div class="blind"></div>
+                            </div>
+                        </div>
+                        <div class="downMenuWrap">
+                            <span>шторка</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                    автополив цветка 
+                    <div class="blockItem">
+                        <div class="mainWijetWrap mainFlowerWijetWrap">
+                            <div class="flowerWrap">
+                                <i class="fas fa-seedling flowerDecore"></i>
+                                <div class="flower">
+                                    <div class="flowerButton1"><i class="fas fa-tint"></i></div>
+                                    <br>
+                                    <div class="flowerButton2"><i class="fas fa-clock"></i></div>
+                                    <br>
+                                    <div class="flowerButton3"><i class="fas fa-eye-dropper"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="downMenuWrap">
+                            <span>полив цветка</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div> -->
+                    <!-- <div class="blockItem">
+                        <div class="mainWijetWrap mainSocketWijetWrap">
+                            <div class="socketWrap">
+                                <div class="socket">
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="downMenuWrap">
+                            <span>розетка</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div> -->
+                    <!-- <div class="blockItem">
+                        <div class="mainWijetWrap mainSliderWijetWrap">
+                            <div class="sliderWrap">
+                                <div class="volume">0</div>
+                                <input type="range" class="slider" min="0" max="100" step="1" value="0">
+                            </div>
+                        </div>
+                        <div class="downMenuWrap">
+                            <span>розетка</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div> -->
+                    <!-- <div class="blockItem">
+                        <div class="mainWijetWrap mainBlindWijetWrap">
+                            <div class="blindDecore"></div>
+                            <div class="blindWrap">
+                                <div class="blindBackground"></div>
+                                <div class="blind"></div>
+                                <input type="range" class="blindSlider" min="0" max="100" step="1" value="0">
+                            </div>
+                        </div>
+                        <div class="downMenuWrap">
+                            <span>шторка</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div> -->
+                    <!-- <div class="blockItem">
+                        <div class="mainWijetWrap mainSetValueWijetWrap">
+                            <div class="setValueWrap">
+                                <div class="setValueButton1"><i class="fas fa-minus"></i></div>
+                                <input class="setValue" type="number" value="6">
+                                <div class="setValueButton2"><i class="fas fa-plus"></i></div>
+                            </div>
+                        </div>
+                        <div class="downMenuWrap">
+                            <span>шторка</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div> -->
+                    <!-- <div class="blockItem">
+                        <div class="mainWijetWrap mainLabeledButtonWijetWrap">
+                            <div class="labeledButton">OFF</div>
+                        </div>
+                        <div class="downMenuWrap">
+                            <span>кнопка с фиксацией</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div> -->
+                    <!-- <div class="blockItem">
+                        <div class="mainWijetWrap mainTempWijetWrap">
+                            <div class="temp">21<span>°C</span></div>
+                        </div>
+                        <div class="downMenuWrap">
+                            <span>температура</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                    <div class="blockItem">
+                        <div class="mainWijetWrap mainPressWijetWrap">
+                            <div class="press">746<span>mrs</span> </div>
+                        </div>
+                        <div class="downMenuWrap">
+                            <span>давление</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                    <div class="blockItem">
+                        <div class="mainWijetWrap mainHumWijetWrap">
+                            <div class="hum">70<span>%</span></div>
+                        </div>
+                        <div class="downMenuWrap">
+                            <span>влажность</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                    <div class="blockItem">
+                        <div class="mainWijetWrap mainValDispWijetWrap">
+                            <div class="valDisp">123</div>
+                        </div>
+                        <div class="downMenuWrap">
+                            <span>значение</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div> -->
+                    <!-- <div class="blockItem">
+                        <div class="mainWijetWrap mainLightWijetWrap">
+                            <div class="light"></div>
+                            <div class="lightBorder"></div>
+                            <div class="lightLengA"></div>
+                            <div class="lightLengK"></div>
+                        </div>
+                        <div class="downMenuWrap">
+                            <span>светодиод</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div> -->
+                    <!-- <div class="blockItem">
+                        <div class="mainWijetWrap mainConditionWijetWrap"> = </div>
+                        <div class="downMenuWrap">
+                            <span>приравнивание</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                    <div class="blockItem">
+                        <div class="mainWijetWrap mainConditionWijetWrap"> == </div>
+                        <div class="downMenuWrap">
+                            <span>приравнивание</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                    <div class="blockItem">
+                        <div class="mainWijetWrap mainConditionWijetWrap"> === </div>
+                        <div class="downMenuWrap">
+                            <span>приравнивание</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                    <div class="blockItem">
+                        <div class="mainWijetWrap mainConditionWijetWrap"> != </div>
+                        <div class="downMenuWrap">
+                            <span>приравнивание</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                    <div class="blockItem">
+                        <div class="mainWijetWrap mainConditionWijetWrap"> > </div>
+                        <div class="downMenuWrap">
+                            <span>приравнивание</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                    <div class="blockItem">
+                        <div class="mainWijetWrap mainConditionWijetWrap"> < </div>
+                        <div class="downMenuWrap">
+                            <span>приравнивание</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                    <div class="blockItem">
+                        <div class="mainWijetWrap mainConditionWijetWrap"> >> </div>
+                        <div class="downMenuWrap">
+                            <span>приравнивание</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                    <div class="blockItem">
+                        <div class="mainWijetWrap mainConditionWijetWrap"> << </div>
+                        <div class="downMenuWrap">
+                            <span>приравнивание</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                    <div class="blockItem">
+                        <div class="mainWijetWrap mainConditionWijetWrap"> += </div>
+                        <div class="downMenuWrap">
+                            <span>приравнивание</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                    <div class="blockItem">
+                        <div class="mainWijetWrap mainConditionWijetWrap"> -= </div>
+                        <div class="downMenuWrap">
+                            <span>приравнивание</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                    <div class="blockItem">
+                        <div class="mainWijetWrap mainConditionWijetWrap"> ×= </div>
+                        <div class="downMenuWrap">
+                            <span>приравнивание</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                    <div class="blockItem">
+                        <div class="mainWijetWrap mainConditionWijetWrap"> /= </div>
+                        <div class="downMenuWrap">
+                            <span>приравнивание</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                    <div class="blockItem">
+                        <div class="mainWijetWrap mainConditionWijetWrap"> % </div>
+                        <div class="downMenuWrap">
+                            <span>приравнивание</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                    <div class="blockItem">
+                        <div class="mainWijetWrap mainConditionWijetWrap"> >=< </div>
+                        <div class="downMenuWrap">
+                            <span>приравнивание</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                    <div class="blockItem">
+                        <div class="mainWijetWrap mainConditionWijetWrap"> <=> </div>
+                        <div class="downMenuWrap">
+                            <span>приравнивание</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                    <div class="blockItem">
+                        <div class="mainWijetWrap mainConditionWijetWrap"> OR </div>
+                        <div class="downMenuWrap">
+                            <span>приравнивание</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                    <div class="blockItem">
+                        <div class="mainWijetWrap mainConditionWijetWrap"> XOR </div>
+                        <div class="downMenuWrap">
+                            <span>приравнивание</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                    <div class="blockItem">
+                        <div class="mainWijetWrap mainConditionWijetWrap"> AND </div>
+                        <div class="downMenuWrap">
+                            <span>приравнивание</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                    <div class="blockItem">
+                        <div class="mainWijetWrap mainConditionWijetWrap"> NAND </div>
+                        <div class="downMenuWrap">
+                            <span>приравнивание</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                    <div class="blockItem">
+                        <div class="mainWijetWrap mainConditionWijetWrap"> NOR </div>
+                        <div class="downMenuWrap">
+                            <span>приравнивание</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div> -->
+                    <!-- <div class="blockItem">
+                        <div class="mainWijetWrap mainConditionGoldWijetWrap" data-toggle="modal"
+                            data-target="#codeModal"> Func </div>
+                        <div class="downMenuWrap">
+                            <span>функция</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div> -->
+                    <!-- <div class="blockItem">
+                        <div class="mainWijetWrap mainTimerWijetWrap">
+                            <div class="timerTop"></div>
+                            <div class="timerButtonWrap">
+                                <div class="timerDecoreLL"></div>
+                                <div class="timerDecoreL"></div>
+                                <div class="timerDecoreB"></div>
+                                <div class="timerDecoreT timerText1"></div>
+                                <div class="timerDecoreT timerText2"></div>
+                                <div class="timerDecoreT timerText3"></div>
+                            </div>
+                        </div>
+                        <div class="downMenuWrap">
+                            <span>таймер</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div> -->
+                    <!-- <div class="blockItem">
+                        <div class="mainWijetWrap mainOnOffWijetWrap">
+                            <div class="OnOffWrap">
+                                <div class="onOffButton">|</div>
+                                <div class="lightIndicator"></div>
+                                <div class="onOffButton onOffButtonDown">◯</div>
+                            </div>
+                        </div>
+                        <div class="downMenuWrap">
+                            <span>вкл - выкл</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div> -->
+                    <!-- <div class="blockItem">
+                        <div class="mainWijetWrap mainLampWijetWrap">
+                            <div class="lampPatron"></div>
+                            <div class="lamp"></div>
+                            <div class="lampDecore">Lamp</div>
+                            <div class="lampWrap lampWrapActive"></div>
+                            <div class="lampShadow"></div>
+                        </div>
+                        <div class="downMenuWrap">
+                            <span>розетка</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div> -->
+                    <div class="blockItem">
+                        <div class="mainWijetWrap mainNotifyWijetWrap">
+                            <div class="notifyIndicator">9+</div>
+                            <i class="fas fa-bell screenTargetButton"></i>
+                        </div>
+                        <div class="downMenuWrap">
+                            <span>уведомление</span>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 navPanelRight userInterfaceVisible">
+                <div class="titleContainer"><span>Виджеты</span></div>
+                <!-- <div class="rightLine"></div> -->
+                <div class="vidgetsContainer">
+                    <!-- <div class="mainVidjetContainer">
+                        <div class="vidjetImg">
+                            <img src="../Images/Screenshot_55.jpg" alt="">
+                        </div>
+                        <i class="fas fa-plus"></i>
+                        <span></span>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Модальные окна виджетов -->
+    <div class="modal fade" id="codeModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Функция</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="decore">
+                        1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22
+                    </div>
+                    <div class="infoText"></div>
+                    <textarea class="functionCode" cols="30" rows="10"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <div class="info">i</div>
+                    <button type="button" class="btn btn-secondary standartModalBtn"
+                        data-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-danger standartModalBtn">Очиcтить</button>
+                    <button type="button" class="btn btn-primary standartModalBtn">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade standartNwasdModal" id="notifyModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Уведомление</h5>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary modalBtn" data-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-danger modalBtn">Очиcтить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <dialog id="notifyScreen" class="defalutNwasdToolScreen">
+        <div class="screenMain"></div>
+        <div class="screenFooter">
+            <div class="screenFooterName">
+                <div class="screenFooterTitle">Уведомление</div>
+            </div>
+            <div class="screenFooterMain">
+                <div class="screenFooterButton"><i class="fas fa-eraser"></i></div>
+                <div class="screenFooterButton -screenOffTrigger"><i class="fas fa-arrow-down"></i></div>
+            </div>
+        </div>
+    </dialog>
+    
+    <div class="serverContainer none">
+        <div class="titleContainer serverTitle"><span>--- Меню управления ---</span></div>
+        <div class="serverContainerMain"></div>
+    </div>
+    <div class="toastWrap"></div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script src="../Packages/jquery.knob.js"></script>
+    <script src="../Scripts/wijetNames.js"></script>
+    <script src="../Scripts/nWASD_serverFunctions.js"></script>
+    <script src="../Scripts/nWASD_wijets.js"></script>
+    <script src="../Scripts/nWASD_wijetsRender.js"></script>
+    <script src="../Scripts/nWASD_vij.js"></script>
+    <script src="../Scripts/nWASD_flat.js"></script>
+    <script src="../Scripts/nWASD_nav.js"></script>
+</body>
+
+</html>

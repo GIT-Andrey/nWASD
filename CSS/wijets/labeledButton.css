@@ -1,0 +1,42 @@
+.mainLabeledButtonWijetWrap {
+  width: 148px;
+  background: #303952;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mainLabeledButtonWijetWrap .labeledButton {
+  width: 100px;
+  height: 60px;
+  background: #303952;
+  border-radius: 30px;
+  -webkit-box-shadow: 0 0 4px #22222250;
+          box-shadow: 0 0 4px #22222250;
+  border: 1px solid #fed330;
+  color: #fed330;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 14px;
+  cursor: pointer;
+  -webkit-transition: .1s;
+  transition: .1s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+/*# sourceMappingURL=labeledButton.css.map */

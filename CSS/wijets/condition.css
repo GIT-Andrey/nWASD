@@ -1,0 +1,158 @@
+.mainConditionWijetWrap {
+  width: 98px;
+  background: #bdc3c7;
+  -webkit-box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.5);
+  font-size: 38px;
+  color: #2c3e50;
+  font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.mainConditionGoldWijetWrap {
+  width: 98px;
+  background: #EAB543;
+  -webkit-box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 38px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+#codeModal .modal-body {
+  font-size: 16px;
+  background: #2c3e50;
+  padding: 0px;
+}
+
+#codeModal .modal-body textarea {
+  padding: 5px;
+  width: calc(100% - 35px);
+  background: #2c3e50;
+  color: #a0b1b3;
+  outline: none;
+  border: none;
+  font-family: Menlo, Consolas, DejaVu Sans Mono, monospace;
+  float: right;
+  height: 538px;
+}
+
+#codeModal .modal-body .decore {
+  float: left;
+  width: 35px;
+  background: #243241;
+  height: 538px;
+  padding-top: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: Menlo, Consolas, DejaVu Sans Mono, monospace;
+  color: #bd7e18;
+  font-weight: 600;
+}
+
+#codeModal .modal-body .infoText {
+  position: absolute;
+  width: calc(100% - 35px);
+  height: 538px;
+  right: 0;
+  background: #2c3e50;
+  color: #a0b1b3;
+  font-family: Menlo, Consolas, DejaVu Sans Mono, monospace;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media all and (max-width: 991px) {
+  #codeModal .modal-body .infoText {
+    font-size: 12px;
+  }
+}
+
+#codeModal .modal-footer {
+  background: #1f2b38;
+  padding: 2px 3px 2px 0;
+}
+
+#codeModal .modal-footer .info {
+  left: -4px;
+  bottom: -4px;
+  height: 47px;
+  width: 35px;
+  background: #bd7e18;
+  font-family: Menlo, Consolas, DejaVu Sans Mono, monospace;
+  color: white;
+  font-weight: 700;
+  border-radius: 0 10px 10px 5px;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+
+#codeModal .modal-header {
+  height: 30px;
+  padding: 0 0 0 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #1f2b38;
+  color: #95a5a6;
+  font-weight: 600;
+}
+
+#codeModal .modalBtn {
+  font-size: 14px;
+}
+/*# sourceMappingURL=condition.css.map */

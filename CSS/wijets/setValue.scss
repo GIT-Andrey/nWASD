@@ -1,0 +1,82 @@
+.mainSetValueWijetWrap {
+    width: 148px;
+    background: #303952;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .setValueWrap {
+        display: flex;
+        align-items: center;
+
+        .setValue {
+            background: #1abc9c;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            font-family: monospace, 'Fira Sans', sans-serif;
+            border-radius: 3px;
+            color: #ecf0f1;
+            border: none;
+            text-align: center;
+            outline: none;
+            box-shadow: 0 0 4px #22222250;
+            position: relative;
+            z-index: 5;
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+            }
+            & {
+                -moz-appearance: textfield;
+            }
+        }
+
+        .setValueButton1 {
+            background: #16a085;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            border-radius: 2px 0 0 2px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            color: #ecf0f1;
+
+            &:active {
+                clip-path: polygon(3px 3px, 40px 0px, 40px 40px, 3px 37px);
+
+                i {
+                    transform: rotateY(-30deg);
+                }
+            }
+        }
+
+        .setValueButton2 {
+            background: #16a085;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            border-radius: 0 2px 2px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            color: #ecf0f1;
+            transition: .1s;
+
+            &:active {
+                clip-path: polygon(0px 0px, 37px 3px, 37px 37px, 0px 40px);
+
+                i {
+                    transform: rotateY(26deg);
+                }
+            }
+        }
+    }
+
+}

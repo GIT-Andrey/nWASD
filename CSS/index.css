@@ -1,0 +1,144 @@
+body {
+  background: url(../Images/nWASD_pattern.jpg);
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.login-block {
+  background: #cbe6bab4;
+  width: 350px;
+  height: 500px;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.login-block_none {
+  display: none;
+}
+
+.login-block_center {
+  margin-left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin-top: 100px;
+}
+
+.login-block_orange {
+  background: #efa48bc5;
+}
+
+.login-form {
+  background: white;
+  width: 330px;
+  height: 480px;
+  border-radius: 5px;
+  display: block;
+  background: #CBE6BA;
+}
+
+.login-form_orange {
+  background: #EFA48B;
+}
+
+.login-form__label {
+  display: block;
+  font-size: 20px;
+}
+
+.login-form__label_big {
+  margin: 12px 0px 20px 0px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.login-form__label_default {
+  margin: 7px;
+}
+
+.login-form__label_light {
+  font-size: 13px;
+  margin: 7px;
+  position: absolute;
+  bottom: 7px;
+  color: #5f5f5f;
+}
+
+.login-form__label_light span {
+  color: #009ce4;
+}
+
+.login-form__label_light span:hover {
+  text-decoration: underline;
+}
+
+.login-form__input_def {
+  margin: 7px;
+}
+
+.login-form__input {
+  width: 316px;
+  border: none;
+  border-radius: 2px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 4px;
+  font-size: 16px;
+  height: 40px;
+  outline: none;
+}
+
+.login-form__button {
+  width: 100px;
+  border: none;
+  border-radius: 2px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 4px;
+  font-size: 16px;
+  height: 40px;
+  background: white;
+  -webkit-transition: .15s;
+  transition: .15s;
+  float: right;
+  outline: none;
+  background: #CBF8F8;
+}
+
+.login-form__button:hover {
+  -webkit-transition: .15s;
+  transition: .15s;
+  background: #CBFFFF;
+}
+
+.login-form__button_def {
+  margin: 7px;
+}
+
+.login-form__button_orange {
+  background: #EB5572;
+  width: 200px;
+}
+
+.login-form__button_orange:hover {
+  -webkit-transition: .15s;
+  transition: .15s;
+  background: #FE5072;
+}
+
+i {
+  position: -webkit-sticky;
+  position: sticky;
+  margin-left: -40px;
+  bottom: -20px;
+  color: #5f5f5f;
+}
+/*# sourceMappingURL=index.css.map */

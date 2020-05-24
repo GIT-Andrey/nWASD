@@ -1,0 +1,82 @@
+.mainTimerWijetWrap {
+  width: 98px;
+  background: #0d5e4d;
+}
+
+.mainTimerWijetWrap .timerTop {
+  width: 100%;
+  height: 18px;
+  background: #202020;
+  font-size: 10px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mainTimerWijetWrap .timerButtonWrap {
+  height: 112px;
+  width: 100%;
+}
+
+.mainTimerWijetWrap .timerButtonWrap .timerDecoreT {
+  width: 25px;
+  height: 40px;
+  background: #ffffff;
+  z-index: 1;
+  margin: 2px;
+  border-radius: 1px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 32px;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  left: 5.5px;
+  top: -16.5px;
+}
+
+.mainTimerWijetWrap .timerButtonWrap .timerDecoreL {
+  width: 83px;
+  height: 2px;
+  background: #0d5e4d;
+  z-index: 2;
+  position: relative;
+  margin: auto;
+  top: 47px;
+}
+
+.mainTimerWijetWrap .timerButtonWrap .timerDecoreLL {
+  width: 91px;
+  height: 8px;
+  border-radius: 2px;
+  z-index: 0;
+  background: #202020;
+  margin: auto;
+  position: relative;
+  top: 52px;
+}
+
+.mainTimerWijetWrap .timerButtonWrap .timerDecoreB {
+  position: relative;
+  z-index: 3;
+  width: 83px;
+  height: 40px;
+  cursor: pointer;
+  margin: auto;
+  top: 25px;
+}
+/*# sourceMappingURL=timer.css.map */

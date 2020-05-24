@@ -1,0 +1,64 @@
+.mainBlindWijetWrap {
+    width: 198px;
+    background: #303952;
+
+    .blindDecore {
+        width: 178px;
+        height: 8px;
+        margin: auto;
+        background: #2b4f6d;
+        margin-top: 10px;
+        border-left: 4px solid #7f8fa6;
+        border-right: 4px solid #7f8fa6;
+        border-radius: 1px;
+        position: relative;
+    }
+
+    .blindWrap {
+        width: 158px;
+        height: 100px;
+        margin: auto;
+        overflow: hidden;
+
+        .blind {
+            width: 158px;
+            min-height: 4px;
+            margin-top: -100px;
+            background: #40739e;
+            position: sticky;
+            border-bottom: solid 4px #acacac;
+            border-radius: 0 0 2px 2px;
+            z-index: 3;
+        }
+
+        .blindBackground {
+            width: 150px;
+            height: 96px;
+            margin-top: 2px;
+            margin-left: 4px;
+            background: #edf2f5;
+            position: relative;
+            border-radius: 0 0 2px 2px;
+        }
+
+        .blindSlider {
+            width: 100%;
+            -webkit-appearance: none;
+            outline: none;
+            position: relative;
+            background: transparent;
+            // right: -30px;
+            top: -100px;
+            transform: rotate(90deg);
+            z-index: 20;
+            margin: auto;
+
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                height: 158px;
+                width: 4px;
+                cursor: pointer;
+            }
+        }
+    }
+}

@@ -1,0 +1,70 @@
+.mainTimerWijetWrap {
+    width: 98px;
+    background: #0d5e4d;
+
+    .timerTop {
+        width: 100%;
+        height: 18px;
+        background: #202020;
+        font-size: 10px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .timerButtonWrap {
+        height: 112px;
+        width: 100%;
+        // padding-top: 5px;
+
+        .timerDecoreT {
+            width: 25px;
+            height: 40px;
+            background: #ffffff;
+            z-index: 1;
+            margin: 2px;
+            border-radius: 1px;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+            display: inline-flex;
+            position: relative;
+            left: 5.5px;
+            top: -16.5px;
+            // border-top: 18px #0d5e4d solid;
+        }
+
+        .timerDecoreL {
+            width: 83px;
+            height: 2px;
+            background: #0d5e4d;
+            z-index: 2;
+            position: relative;
+            margin: auto;
+            top: 47px;
+        }
+
+        .timerDecoreLL {
+            width: 91px;
+            height: 8px;
+            border-radius: 2px;
+            z-index: 0;
+            background: #202020;
+            margin: auto;
+            position: relative;
+            top: 52px;
+        }
+
+        .timerDecoreB {
+            position: relative;
+            z-index: 3;
+            width: 83px;
+            height: 40px;
+            cursor: pointer;
+            margin: auto;
+            top: 25px;
+        }
+    }
+}

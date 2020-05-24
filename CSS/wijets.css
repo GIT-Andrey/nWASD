@@ -1,0 +1,56 @@
+/* Виджеты */
+
+@import "./wijets/bigButton.css";
+@import "./wijets/swich.css";
+@import "./wijets/onoff.css";
+@import "./wijets/blind.css";
+@import "./wijets/flower.css";
+@import "./wijets/lamp.css";
+@import "./wijets/tipe.css";
+@import "./wijets/socket.css";
+@import "./wijets/slider.css";
+@import "./wijets/setValue.css";
+@import "./wijets/labeledButton.css";
+@import "./wijets/temp.css";
+@import "./wijets/notify.css";
+
+/* Условия */
+
+@import "./wijets/condition.css";
+
+/* Таймеры */
+
+@import "./wijets/timer.css";
+
+.mainWijetWrap {
+    height: 130px;
+    overflow: hidden;
+}
+
+.downMenuWrap {
+    width: 100%;
+    padding: 3px 2px 0px;
+    height: 18px;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+.downMenuWrap i {
+    font-size: 16px;
+    float: right;
+    height: 16px;
+    cursor: pointer;
+    margin-top: -1px;
+}
+
+.downMenuWrap span {
+    width: calc(100% - 20px);
+    height: 16px;
+    font-size: 10px;
+    overflow-x: scroll;
+    padding: 1px 0;
+    box-sizing: border-box;
+}
+
+
+

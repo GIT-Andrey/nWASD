@@ -1,0 +1,5 @@
+ - Создание дериктории с сайтом джанго -
+
+django-admin startproject *имя проэкта*
+python3 manage.py runserver
+

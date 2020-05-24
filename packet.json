@@ -1,0 +1,23 @@
+{
+    "flat_1": [
+        {
+            "type": "bigButton",
+            "html": "<div class=\"blockItem\"><div class=\"mainWijetWrap mainButtonWijetWrap\"><div class=\"bigButtonWrap\"><div    class=\"bigButton\">OFF</div></div></div><div class=\"downMenuWrap\"><span>кнопка</span><i  class=\"fas fa-cog\"></i></   div></div>",
+            "options": {
+                "title": "кнопка !!!",
+                "pin": 0
+            }
+        }
+    ],
+    "flat_2": [],
+    "flat_3": [
+        {
+            "type": "bigButton",
+            "html": "<div class=\"blockItem\"><div class=\"mainWijetWrap mainButtonWijetWrap\"><div class=\"bigButtonWrap\"><div    class=\"bigButton\">OFF</div></div></div><div class=\"downMenuWrap\"><span>кнопка</span><i  class=\"fas fa-cog\"></i></   div></div>",
+            "options": {
+                "title": "кнопка !!!",
+                "pin": 0
+            }
+        }
+    ]
+}

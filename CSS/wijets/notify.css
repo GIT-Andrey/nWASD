@@ -1,0 +1,144 @@
+.mainNotifyWijetWrap {
+  width: 98px;
+  background: #3a6566;
+  font-size: 42px;
+  color: whitesmoke;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.mainNotifyWijetWrap .notifyIndicator {
+  width: 20px;
+  height: 20px;
+  background: #f77667;
+  border-radius: 40%;
+  position: relative;
+  z-index: 2;
+  float: right;
+  left: -28px;
+  bottom: -38px;
+  border: 2px solid #3a6566;
+  font-size: 9px;
+  font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: whitesmoke;
+  visibility: hidden;
+}
+
+.mainNotifyWijetWrap i {
+  margin: auto;
+  display: block;
+  text-align: center;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+@-webkit-keyframes notify {
+  10% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  15% {
+    -webkit-transform: scale(1.2) rotate(20deg);
+            transform: scale(1.2) rotate(20deg);
+  }
+  20% {
+    -webkit-transform: scale(1.2) rotate(-20deg);
+            transform: scale(1.2) rotate(-20deg);
+  }
+  25% {
+    -webkit-transform: scale(1.2) rotate(20deg);
+            transform: scale(1.2) rotate(20deg);
+  }
+  30% {
+    -webkit-transform: scale(1.2) rotate(-20deg);
+            transform: scale(1.2) rotate(-20deg);
+  }
+  35% {
+    -webkit-transform: scale(1.2) rotate(20deg);
+            transform: scale(1.2) rotate(20deg);
+  }
+  40% {
+    -webkit-transform: scale(1.2) rotate(-20deg);
+            transform: scale(1.2) rotate(-20deg);
+  }
+  45% {
+    -webkit-transform: scale(1.2) rotate(20deg);
+            transform: scale(1.2) rotate(20deg);
+  }
+  50% {
+    -webkit-transform: scale(1.2) rotate(-20deg);
+            transform: scale(1.2) rotate(-20deg);
+  }
+  55% {
+    -webkit-transform: scale(1.2) rotate(20deg);
+            transform: scale(1.2) rotate(20deg);
+  }
+  60% {
+    -webkit-transform: scale(1.2) rotate(-20deg);
+            transform: scale(1.2) rotate(-20deg);
+  }
+  70% {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes notify {
+  10% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  15% {
+    -webkit-transform: scale(1.2) rotate(20deg);
+            transform: scale(1.2) rotate(20deg);
+  }
+  20% {
+    -webkit-transform: scale(1.2) rotate(-20deg);
+            transform: scale(1.2) rotate(-20deg);
+  }
+  25% {
+    -webkit-transform: scale(1.2) rotate(20deg);
+            transform: scale(1.2) rotate(20deg);
+  }
+  30% {
+    -webkit-transform: scale(1.2) rotate(-20deg);
+            transform: scale(1.2) rotate(-20deg);
+  }
+  35% {
+    -webkit-transform: scale(1.2) rotate(20deg);
+            transform: scale(1.2) rotate(20deg);
+  }
+  40% {
+    -webkit-transform: scale(1.2) rotate(-20deg);
+            transform: scale(1.2) rotate(-20deg);
+  }
+  45% {
+    -webkit-transform: scale(1.2) rotate(20deg);
+            transform: scale(1.2) rotate(20deg);
+  }
+  50% {
+    -webkit-transform: scale(1.2) rotate(-20deg);
+            transform: scale(1.2) rotate(-20deg);
+  }
+  55% {
+    -webkit-transform: scale(1.2) rotate(20deg);
+            transform: scale(1.2) rotate(20deg);
+  }
+  60% {
+    -webkit-transform: scale(1.2) rotate(-20deg);
+            transform: scale(1.2) rotate(-20deg);
+  }
+  70% {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+/*# sourceMappingURL=notify.css.map */

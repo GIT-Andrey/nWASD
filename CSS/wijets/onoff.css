@@ -1,0 +1,72 @@
+.mainOnOffWijetWrap {
+  width: 98px;
+  background: #303952;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mainOnOffWijetWrap .OnOffWrap {
+  width: 46px;
+  height: 108px;
+  -webkit-box-shadow: 0px 0px 6px 0.5px #00000060;
+          box-shadow: 0px 0px 6px 0.5px #00000060;
+  background: #2f3952;
+  border-radius: 23px;
+  padding: 3px;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.mainOnOffWijetWrap .OnOffWrap .onOffButton {
+  cursor: pointer;
+  position: relative;
+  font-weight: 600;
+  margin-bottom: 1px;
+  font-size: 14px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40px;
+  height: 40px;
+  background: #1abc9c;
+  border-radius: 50% 50% 0 0;
+  -webkit-box-shadow: 0px 0px 1px #34495e;
+          box-shadow: 0px 0px 1px #34495e;
+}
+
+.mainOnOffWijetWrap .OnOffWrap .onOffButton:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.mainOnOffWijetWrap .OnOffWrap .onOffButtonDown {
+  border-radius: 0 0 50% 50%;
+}
+
+.mainOnOffWijetWrap .OnOffWrap .lightIndicator {
+  width: 40px;
+  height: 20px;
+  background: #1abc9c;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+/*# sourceMappingURL=onoff.css.map */

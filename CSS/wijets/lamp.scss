@@ -1,0 +1,66 @@
+.mainLampWijetWrap {
+    width: 98px;
+    background: #303952;
+    padding-top: 0px;
+    --lamp-background: #ffd9ab;
+
+    .lampWrap {
+        position: relative;
+        background: #ffffff;
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        margin: auto;
+        position: relative;
+        top: -7.3px;
+        clip-path: polygon(-20px 9px, 85px 9px, 85px 96px, -20px 96px);
+        z-index: 1;
+    }
+
+    .lampPatron {
+        background: #fff;
+        width: 43px;
+        height: 30px;
+        margin: auto;
+        border-radius: 1px 1px 3px 3px;
+        border-top: solid 3px rgb(226, 226, 226);
+    }
+
+    .lamp {
+        background: silver;
+        width: 38px;
+        height: 5px;
+        margin: auto;
+        z-index: 3;
+    }
+
+    .lampDecore {
+        background: #ecf0f1;
+        width: 42px;
+        height: 10px;
+        margin: auto;
+        border-radius: 3px 3px 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 7px;
+        color: silver;
+        z-index: 3;
+    }
+
+    .lampWrapActive {
+        background: var(--lamp-background);
+    }
+
+    .lampShadow {
+        width: 50px;
+        height: 50px;
+        position: relative;
+        top: -60px;
+        margin: auto;
+        border-radius: 50%;
+        z-index: 2;
+        cursor: pointer;
+        box-shadow: none;
+    }
+}

@@ -1,0 +1,116 @@
+.mainSetValueWijetWrap {
+  width: 148px;
+  background: #303952;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mainSetValueWijetWrap .setValueWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mainSetValueWijetWrap .setValueWrap .setValue {
+  background: #1abc9c;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  font-family: monospace, 'Fira Sans', sans-serif;
+  border-radius: 3px;
+  color: #ecf0f1;
+  border: none;
+  text-align: center;
+  outline: none;
+  -webkit-box-shadow: 0 0 4px #22222250;
+          box-shadow: 0 0 4px #22222250;
+  position: relative;
+  z-index: 5;
+}
+
+.mainSetValueWijetWrap .setValueWrap .setValue::-webkit-outer-spin-button, .mainSetValueWijetWrap .setValueWrap .setValue::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.mainSetValueWijetWrap .setValueWrap .setValue {
+  -moz-appearance: textfield;
+}
+
+.mainSetValueWijetWrap .setValueWrap .setValueButton1 {
+  background: #16a085;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 2px 0 0 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: #ecf0f1;
+}
+
+.mainSetValueWijetWrap .setValueWrap .setValueButton1:active {
+  -webkit-clip-path: polygon(3px 3px, 40px 0px, 40px 40px, 3px 37px);
+          clip-path: polygon(3px 3px, 40px 0px, 40px 40px, 3px 37px);
+}
+
+.mainSetValueWijetWrap .setValueWrap .setValueButton1:active i {
+  -webkit-transform: rotateY(-30deg);
+          transform: rotateY(-30deg);
+}
+
+.mainSetValueWijetWrap .setValueWrap .setValueButton2 {
+  background: #16a085;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 0 2px 2px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: #ecf0f1;
+  -webkit-transition: .1s;
+  transition: .1s;
+}
+
+.mainSetValueWijetWrap .setValueWrap .setValueButton2:active {
+  -webkit-clip-path: polygon(0px 0px, 37px 3px, 37px 37px, 0px 40px);
+          clip-path: polygon(0px 0px, 37px 3px, 37px 37px, 0px 40px);
+}
+
+.mainSetValueWijetWrap .setValueWrap .setValueButton2:active i {
+  -webkit-transform: rotateY(26deg);
+          transform: rotateY(26deg);
+}
+/*# sourceMappingURL=setValue.css.map */
