@@ -158,3 +158,26 @@ $(".-screenOffTrigger").click(function() {
         $(".defalutNwasdToolScreen")[0].close();
     }, 300);
 })
+
+let downScreenMenuPosition = false;
+$(".screenFooterMenu").hide();
+
+$(".-screenDownMenuTrigger").click(function() {
+    downScreenMenuPosition = !downScreenMenuPosition;
+    if (downScreenMenuPosition) {
+        $(".screenFooterMenu").show();
+        $(".screenMain").css("margin-top", "-500px");
+        $(".-screenDownMenuTrigger").css("transform", "rotate(180deg)");
+    } else {
+        $(".screenMain").css("margin-top", "0px");
+        $(".-screenDownMenuTrigger").css("transform", "none");
+        setTimeout(function() {
+            $(".screenFooterMenu").hide();
+        }, 200);
+    }
+});
+
+
+$(".defalutNwasdToolScreen select").styler();
+$(".defalutNwasdToolScreen input[type=\"checkbox\"]").styler();
+$(".defalutNwasdToolScreen input[type=\"number\"]").styler();

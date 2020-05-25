@@ -6,6 +6,7 @@
     <title>nWASD</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="/Icons/nWASD_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../Packages/jQueryFormStyler/dist/jquery.formstyler.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link
@@ -577,8 +578,25 @@
                 <div class="screenFooterTitle">Уведомление</div>
             </div>
             <div class="screenFooterMain">
+                <div class="screenFooterButton -screenDownMenuTrigger"><i class="fas fa-arrow-circle-up"></i></div>
                 <div class="screenFooterButton"><i class="fas fa-eraser"></i></div>
                 <div class="screenFooterButton -screenOffTrigger"><i class="fas fa-arrow-down"></i></div>
+            </div>
+            <div class="screenFooterMenu">
+                <input type="checkbox"> <input type="checkbox"> <input type="checkbox"> <br>
+                <input type="text" placeholder="текст"><input type="number" placeholder="число">
+                <div class="screenDefaultButton">button</div>
+                <input type="range">
+                <br>
+                <div class="downMenuGroupContainer">
+                    <select>
+                        <option value="lo0">opt1</option>
+                        <option value="lo1">opt2</option>
+                        <option value="lo2">opt3</option>
+                    </select>
+                    <br>
+                    <span>выберите значение</span>
+                </div>
             </div>
         </div>
     </dialog>
@@ -596,6 +614,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
+    <script src="../Packages/jQueryFormStyler/dist/jquery.formstyler.min.js"></script>
     <script src="../Packages/jquery.knob.js"></script>
     <script src="../Scripts/wijetNames.js"></script>
     <script src="../Scripts/nWASD_serverFunctions.js"></script>
