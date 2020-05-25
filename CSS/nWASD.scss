@@ -77,12 +77,19 @@ body {
 .defalutNwasdToolScreen {
     width: 100%;
     height: 100%;
+    max-width: 500px;
+    margin: auto;
     transform: translateY(100%);
     transition: transform .3s;
     border: none;
     padding: 0;
     background: #202327;
     overflow: hidden;
+
+    @media all and (min-width: 500px) {
+        border-radius: 16px;
+        height: 95%;
+    }
 
     .screenMain {
         height: calc(100% - 56px);
