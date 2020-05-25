@@ -220,7 +220,7 @@ let userSettings = {
 };
 
 function wijetsRender() {
-    // $(".blockContainer").html('');
+    $(".blockContainer").html('');
     if (navStatus == 0 || navStatus == 1) {
         flatsNumb = allWijets[navStatus].length;
         navLeftContainerRender();
@@ -257,20 +257,36 @@ function wijetsRenderRun(devision, item) {
     $(".mainTitle span").html(roomName);
 
     // Рендер виджетов
-    for (let i = 0; i < allWijets[devision][item].length; i++) {
-        let idOfWijet = "blockItem-" + devision + "-" + item + "-" + i;
-        $("<div class=\"blockItem\" id=\"" + idOfWijet + "\"></div>").appendTo(".blockContainer");
-        $(allWijets[devision][item][i].html).appendTo("#" + idOfWijet);
-        $("<div class=\"downMenuWrap\"><span class=\"numberOfWijet\"></span><span class=\"titleOfWijet\"></span><i class=\"fas fa-cog\" data-toggle=\"modal\" data-target=\"#modal\"></i></div><div class=\"offline\"></div>").appendTo("#" + idOfWijet);
-        // wijet[0].id = "blockItem-" + devision + "-" + item + "-" + i;
-        allWijets[devision][item][i].init("#" + idOfWijet);
-        $("#" + idOfWijet + " .numberOfWijet").text(i);
-        $("#" + idOfWijet + " .titleOfWijet").text(allWijets[devision][item][i].title);
-        $("#" + idOfWijet + " .downMenuWrap i").click(function () {
-            allWijets[devision][item][i].settings(i);
-        });
-        $("#" + idOfWijet + " .offline").css("width", $("#" + idOfWijet).width());
-        // wijet.appendTo(".blockContainer");
+
+    if (devision == 0) {
+        for (let i = 0; i < allWijets[devision][item].length; i++) {
+            let idOfWijet = "blockItem-" + devision + "-" + item + "-" + i;
+            $("<div class=\"blockItem\" id=\"" + idOfWijet + "\"></div>").appendTo(".blockContainer");
+            $(allWijets[devision][item][i].html).appendTo("#" + idOfWijet);
+            $("<div class=\"downMenuWrap\"><span class=\"numberOfWijet\"></span><span class=\"titleOfWijet\"></span><i class=\"fas fa-cog\" data-toggle=\"modal\" data-target=\"#modal\"></i></div><div class=\"offline\"></div>").appendTo("#" + idOfWijet);
+            // wijet[0].id = "blockItem-" + devision + "-" + item + "-" + i;
+            allWijets[devision][item][i].init("#" + idOfWijet);
+            $("#" + idOfWijet + " .numberOfWijet").text(i);
+            $("#" + idOfWijet + " .titleOfWijet").text(allWijets[devision][item][i].title);
+            $("#" + idOfWijet + " .downMenuWrap i").click(function () {
+                allWijets[devision][item][i].settings(i);
+            });
+            $("#" + idOfWijet + " .offline").css("width", $("#" + idOfWijet).width());
+        }
+    } else {
+        for (let i = 0; i < allWijets[devision][item].length; i++) {
+            let idOfWijet = "blockItem-" + devision + "-" + item + "-" + i;
+            $("<div class=\"blockItem\" id=\"" + idOfWijet + "\"></div>").appendTo(".blockContainer");
+            $(allWijets[devision][item][i].html).appendTo("#" + idOfWijet);
+            $("<div class=\"downMenuWrap\"><span class=\"numberOfWijet\"></span><span class=\"titleOfWijet\"></span><i class=\"fas fa-cog\" data-toggle=\"modal\" data-target=\"#modal\"></i></div><div class=\"offline\"></div>").appendTo("#" + idOfWijet);
+            allWijets[devision][item][i].init("#" + idOfWijet);
+            $("#" + idOfWijet + " .numberOfWijet").text(i);
+            $("#" + idOfWijet + " .titleOfWijet").text(allWijets[devision][item][i].title);
+            $("#" + idOfWijet + " .downMenuWrap i").click(function () {
+                allWijets[devision][item][i].settings(i);
+            });
+            $("#" + idOfWijet + " .offline").css("width", $("#" + idOfWijet).width());
+        }
     }
     // flat = "flat_" + item;
     // if (devision == 0) {

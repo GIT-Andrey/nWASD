@@ -483,7 +483,7 @@ body {
         margin-bottom: 30px;
         display: flex;
         align-items: center;
-        box-shadow: 3px 3px 3px 1px #151824;
+        background: #27ae60;
 
         span {
             position: relative;
@@ -494,11 +494,12 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 24px;
+            font-size: 20px;
             color: white;
             font-family: 'Varela Round', sans-serif;
-            box-shadow: 3px 3px 3px 1px #151824;
+            box-shadow: 0 0 5px #151824c5;
             cursor: pointer;
+            background: #2ecc71;
         }
     }
 }
@@ -619,6 +620,25 @@ body {
         }
     }
 
+    .growItem {
+        display: inline-block;
+        border: 1px solid #1e2234;
+        border-radius: 2px;
+        height: 200px;
+        overflow: hidden;
+        background: #202020;
+        box-sizing: border-box;
+
+        .offlineGrow {
+            height: 130px;
+            position: relative;
+            background: rgba(0, 0, 0, 0.5);
+            margin-top: -148px;
+            border-radius: 1px 1px 0 0;
+            z-index: 10;
+        }
+    }
+
     .numberOfWijet {
         background: #303952;
         margin-right: 3px;
@@ -721,7 +741,7 @@ body {
     display: none;
 
     .vidgetsContainer {
-        height: calc(100% - 30px);
+        height: calc(100% - 32px);
         padding-left: 10px;
     }
 }
@@ -734,7 +754,7 @@ body {
     display: none;
 
     .navLeftContainer {
-        height: calc(100% - 30px);
+        height: calc(100% - 32px);
         padding-left: 10px;
     }
 }
@@ -762,6 +782,10 @@ body {
     margin: 0;
     width: 100%;
 
+    @media all and (max-width: 991px) {
+        height: calc(100vh - 112.5px);
+    }
+
     .serverTitle {
         position: fixed;
         margin-top: -30px;
@@ -769,13 +793,11 @@ body {
 
     .serverContainerMain {
         margin-top: 30px;
-        padding-left: 2px;
         height: calc(100vh - 80px);
-        padding-bottom: 10px;
         overflow-y: scroll;
 
         @media all and (max-width: 991px) {
-            height: calc(100vh - 110px);
+            height: calc(100vh - 112px);
         }
 
         &::-webkit-scrollbar {
@@ -824,7 +846,7 @@ body {
     vertical-align: top;
 
     @include media(xs) {
-        margin: 15px auto 0;
+        margin: 15px 0 0 15px;
     }
 
     .serverContainerItemTitle {
@@ -1202,7 +1224,7 @@ body {
         justify-content: space-around;
         color: #202327;
         font-size: 18px;
-        box-shadow: 0px 1px 8px 0px black;
+        // box-shadow: 0px 1px 8px 0px black;
 
         div {
             background: #fff;
@@ -1220,15 +1242,11 @@ body {
         }
     }
 
-    .serverContainerMain {
-        height: 1px;
-    }
-
-    .serverContainer {
-        height: 1px;
-    }
-
     .toastWrap {
         bottom: 45px;
+    }
+
+    .vidgetsContainer {
+        height: calc(100vh - 112px);
     }
 }

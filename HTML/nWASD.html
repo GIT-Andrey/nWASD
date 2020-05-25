@@ -78,12 +78,12 @@
                         <span class="line"></span></div>
                     <div class="modalItemWrap">
                         <span class="modalItemTitle">Значение 1:</span>
-                        <input type="text" id="timeLine1">
+                        <input type="text" id="timeLine1" autocomplete="off">
                     </div>
                     <hr>
                     <div class="modalItemWrap">
                         <span class="modalItemTitle">Значение 2:</span>
-                        <input type="text" id="timeLine2">
+                        <input type="text" id="timeLine2" autocomplete="off">
                     </div>
                     <div class="modalInfo"><span class="line"></span>
                         <span>Расположение:</span>
@@ -505,16 +505,16 @@
                             <i class="fas fa-cog"></i>
                         </div>
                     </div> -->
-                    <div class="blockItem">
+                    <!-- <div class="blockItem">
                         <div class="mainWijetWrap mainNotifyWijetWrap">
-                            <div class="notifyIndicator">9+</div>
+                            <div class="notifyIndicator"></div>
                             <i class="fas fa-bell screenTargetButton"></i>
                         </div>
                         <div class="downMenuWrap">
                             <span>уведомление</span>
                             <i class="fas fa-cog"></i>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="col-sm-3 navPanelRight userInterfaceVisible">
@@ -602,18 +602,13 @@
     </dialog> -->
 
     <dialog id="notifyScreen" class="defalutNwasdToolScreen">
-        <div class="screenMain">
-            <div class="notifyMainWrap">
-                <div class="notifyHeader"><em>20.04.2020 15:01:05.123</em></div>
-                <div class="notifyFooter">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae totam nam impedit consectetur, explicabo magni facere natus minima consequatur. Nisi incidunt, fugiat delectus nemo impedit ex voluptas quam in magnam.</div>
-            </div>
-        </div>
+        <div class="screenMain"></div>
         <div class="screenFooter">
             <div class="screenFooterName">
                 <div class="screenFooterTitle">Уведомление</div>
             </div>
             <div class="screenFooterMain">
-                <div class="screenFooterButton"><i class="fas fa-eraser"></i></div>
+                <div class="screenFooterButton -notifyClearTrigger"><i class="fas fa-eraser"></i></div>
                 <div class="screenFooterButton -screenOffTrigger"><i class="fas fa-arrow-down"></i></div>
             </div>
         </div>

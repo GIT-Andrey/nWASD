@@ -30,9 +30,6 @@ function navLeftContainerRender() {
                     let spanNumber = i + 1;
                     $("<div class=\"pipeMainWrap\" id=\"piMain-" + i + "\"><span id=\"pi-" + i + "\">" + spanNumber + "</span></div>").appendTo(".leftMenuPanel .navLeftContainer");
                     $("#pi-" + i).click(flClick);
-                    let rgb = "rgb(" + (i * (255 / flatsNumb) + ", ") + (((255 - (i * (255 / flatsNumb))) + ", ") + (255 - (255 / flatsNumb))) + ")";
-                    $("#piMain-" + i).css("background", rgb);
-                    $("#pi-" + i).css("background", rgb);
                 }
             }
         } else {
@@ -41,9 +38,6 @@ function navLeftContainerRender() {
                     let spanNumber = i + 1;
                     $("<div class=\"pipeMainWrap\" id=\"piMain-" + i + "\"><span id=\"pi-" + i + "\">" + spanNumber + "</span></div>").appendTo(".navPanelLeft .navLeftContainer");
                     $("#pi-" + i).click(flClick);
-                    let rgb = "rgb(" + (i * (255 / flatsNumb) + ", ") + (((255 - (i * (255 / flatsNumb))) + ", ") + (255 - (255 / flatsNumb))) + ")";
-                    $("#piMain-" + i).css("background", rgb);
-                    $("#pi-" + i).css("background", rgb);
                 }
             }
         }

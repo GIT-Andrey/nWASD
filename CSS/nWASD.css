@@ -564,8 +564,7 @@ body::-webkit-scrollbar {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-shadow: 3px 3px 3px 1px #151824;
-          box-shadow: 3px 3px 3px 1px #151824;
+  background: #27ae60;
 }
 
 .navLeftContainer .pipeMainWrap span {
@@ -583,12 +582,13 @@ body::-webkit-scrollbar {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 24px;
+  font-size: 20px;
   color: white;
   font-family: 'Varela Round', sans-serif;
-  -webkit-box-shadow: 3px 3px 3px 1px #151824;
-          box-shadow: 3px 3px 3px 1px #151824;
+  -webkit-box-shadow: 0 0 5px #151824c5;
+          box-shadow: 0 0 5px #151824c5;
   cursor: pointer;
+  background: #2ecc71;
 }
 
 .navPanelRight {
@@ -712,6 +712,26 @@ body::-webkit-scrollbar {
 }
 
 .blockContainer .blockItem .offline {
+  height: 130px;
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  margin-top: -148px;
+  border-radius: 1px 1px 0 0;
+  z-index: 10;
+}
+
+.blockContainer .growItem {
+  display: inline-block;
+  border: 1px solid #1e2234;
+  border-radius: 2px;
+  height: 200px;
+  overflow: hidden;
+  background: #202020;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.blockContainer .growItem .offlineGrow {
   height: 130px;
   position: relative;
   background: rgba(0, 0, 0, 0.5);
@@ -844,7 +864,7 @@ body::-webkit-scrollbar {
 }
 
 .rightMenuPanel .vidgetsContainer {
-  height: calc(100% - 30px);
+  height: calc(100% - 32px);
   padding-left: 10px;
 }
 
@@ -857,7 +877,7 @@ body::-webkit-scrollbar {
 }
 
 .leftMenuPanel .navLeftContainer {
-  height: calc(100% - 30px);
+  height: calc(100% - 32px);
   padding-left: 10px;
 }
 
@@ -893,6 +913,12 @@ body::-webkit-scrollbar {
   width: 100%;
 }
 
+@media all and (max-width: 991px) {
+  .serverContainer {
+    height: calc(100vh - 112.5px);
+  }
+}
+
 .serverContainer .serverTitle {
   position: fixed;
   margin-top: -30px;
@@ -900,15 +926,13 @@ body::-webkit-scrollbar {
 
 .serverContainer .serverContainerMain {
   margin-top: 30px;
-  padding-left: 2px;
   height: calc(100vh - 80px);
-  padding-bottom: 10px;
   overflow-y: scroll;
 }
 
 @media all and (max-width: 991px) {
   .serverContainer .serverContainerMain {
-    height: calc(100vh - 110px);
+    height: calc(100vh - 112px);
   }
 }
 
@@ -962,7 +986,7 @@ body::-webkit-scrollbar {
 
 @media all and (max-width: 575px) {
   .serverContainerItem {
-    margin: 15px auto 0;
+    margin: 15px 0 0 15px;
   }
 }
 
@@ -1412,8 +1436,6 @@ body::-webkit-scrollbar {
         justify-content: space-around;
     color: #202327;
     font-size: 18px;
-    -webkit-box-shadow: 0px 1px 8px 0px black;
-            box-shadow: 0px 1px 8px 0px black;
   }
   .phoneMenu div {
     background: #fff;
@@ -1436,14 +1458,11 @@ body::-webkit-scrollbar {
     -webkit-transform: scale(0.9);
             transform: scale(0.9);
   }
-  .serverContainerMain {
-    height: 1px;
-  }
-  .serverContainer {
-    height: 1px;
-  }
   .toastWrap {
     bottom: 45px;
+  }
+  .vidgetsContainer {
+    height: calc(100vh - 112px);
   }
 }
 /*# sourceMappingURL=nWASD.css.map */

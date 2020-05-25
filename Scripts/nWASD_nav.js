@@ -39,14 +39,14 @@ function switchFunc(item) {
 
 function switchWindowFunc(item) {
     if (item == 0) {
-        $(":root").css("--background-color", "#e29600");
+        $(":root").css("--background-color", "#f39c12");
         $("#leftTitle").html("Комната");
         $(".serverContainer").addClass("none");
         $(".userInterfaceVisible").removeClass("none");
         $(".mainContainer").css("display", "block");
         $(".mainTitle span").html("Умный дом");
     } else if (item == 1) {
-        $(":root").css("--background-color", "#3fcf00");
+        $(":root").css("--background-color", "#2ecc71");
         $("#leftTitle").html("Круг полива");
         $(".serverContainer").addClass("none");
         $(".userInterfaceVisible").removeClass("none");
@@ -147,16 +147,12 @@ function user_menu() {
     userMenuStatus = !userMenuStatus;
 }
 
-$(".screenTargetButton").click(function() {
-    $("#notifyScreen")[0].showModal();
-    $(".defalutNwasdToolScreen").css("transform", "translateY(0%)");
-});
-
 $(".-screenOffTrigger").click(function() {
     $(".defalutNwasdToolScreen").css("transform", "translateY(100%)");
     setTimeout(function() {
         $(".defalutNwasdToolScreen")[0].close();
     }, 300);
+    wijetsInit();
 })
 
 let downScreenMenuPosition = false;

@@ -205,17 +205,23 @@ let wijetMass = [
             html: "<div class=\"mainWijetWrap mainTimerWijetWrap\"><div class=\"timerTop\"></div><div class=\"timerButtonWrap\"><div class=\"timerDecoreLL\"></div><div class=\"timerDecoreL\"></div><div class=\"timerDecoreB\"></div><div class=\"timerDecoreT timerText1\"></div><div class=\"timerDecoreT timerText2\"></div><div class=\"timerDecoreT timerText3\"></div></div></div>",
             title: "интервал",
             background: "#0d5e4d"
+        },
+        {
+            html: "<div class=\"mainWijetWrap mainNotifyWijetWrap\"><div class=\"notifyIndicator\"></div><i class=\"fas fa-bell screenTargetButton\"></i></div>",
+            title: "уведомление",
+            background: "#3a6566"
         }
+
     ],
     [{
             html: "",
             title: "кнопка полива",
-            background: "#3fcf00"
+            background: "#303952"
         },
         {
             html: "",
             title: "интервал полива",
-            background: "#698cc8"
+            background: "#303952"
         }
     ]
 ];
@@ -1312,6 +1318,107 @@ class Interval extends SimpleWijet {
         }
     }
 }
+
+class Notify extends SimpleWijet {
+    constructor(html, title, pin, url, esp, val1, val2, time) {
+        super(html, title, pin, url, esp, val1, val2, time);
+        this.texts = [];
+        this.times = [];
+        this.isSignalFirst = true;
+        this.isScreenOpened = false;
+    }
+    script(id, espNumb) {
+        let pin = this.pin - 2;
+
+        this.run(id, espNumb, pin);
+        $(id + " .mainNotifyWijetWrap i").off();
+        $(id + " .mainNotifyWijetWrap i").mousedown(function () {
+            $("#notifyScreen .screenMain").html('');
+            this.isScreenOpened = true;
+
+            for (let i = this.texts.length - 1; i >= 0; i--) {
+                $("<div class=\"notifyMainWrap\"><div class=\"notifyHeader\"><em>" + this.times[i] + "</em></div><div class=\"notifyFooter\">" + this.texts[i] + "</div></div>").appendTo("#notifyScreen .screenMain");
+            }
+
+            $("#notifyScreen")[0].showModal();
+            $(".defalutNwasdToolScreen").css("transform", "translateY(0%)");
+
+            isClick = pin;
+        }.bind(this));
+
+        $("#notifyScreen .-notifyClearTrigger").click(function() {
+            if (this.isScreenOpened) {
+                this.isScreenOpened = false;
+                $("#notifyScreen .screenMain").html('');
+                this.times = [];
+                this.texts = [];
+            }
+        }.bind(this));
+
+    }
+    run(id, espNumb, pin) {
+        if (options.ESPSettings[espNumb].pins[pin] && this.isSignalFirst) {
+            if (this.val2 != '') {
+                let readyText = this.val1.split("{")[0] + options.ESPSettings[espNumb].pins[this.val2 - 2] + this.val1.split("}")[1];
+                this.texts.push(readyText);
+            } else {
+                this.texts.push(this.val1);
+            }
+            let date = new Date();
+            let month = '0';
+            if ((date.getMonth() + 1) > 9) {
+                month = date.getMonth() + 1;
+            } else {
+                month += date.getMonth() + 1;
+            }
+            this.times.push(date.getDate() + "." + month + "." + date.getFullYear() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + "." + date.getMilliseconds());
+            this.isSignalFirst = false;
+
+                let audio = new Audio(); 
+                audio.src = "../Sounds/notify.mp3";
+                audio.play();
+                audio = NaN;
+
+            $(id + " .mainNotifyWijetWrap .notifyIndicator").hide();
+            $(id + " .mainNotifyWijetWrap i").css("animation", "notify 5s forwards");
+
+            setTimeout(function() {
+                $(id + " .mainNotifyWijetWrap i").css("animation", "none");
+                $(id + " .mainNotifyWijetWrap .notifyIndicator").show();
+                if(this.texts.length == 0) {
+                    $(id + " .mainNotifyWijetWrap .notifyIndicator").css("visibility", "hidden");
+                } else if (this.texts.length < 10) {
+                    $(id + " .mainNotifyWijetWrap .notifyIndicator").css("visibility", "visible");
+                    $(id + " .mainNotifyWijetWrap .notifyIndicator").text(this.texts.length);
+                } else {
+                    $(id + " .mainNotifyWijetWrap .notifyIndicator").css("visibility", "visible");
+                    $(id + " .mainNotifyWijetWrap .notifyIndicator").text("9+");
+                }
+            }.bind(this), 5000);
+        } else {
+            if(this.texts.length == 0) {
+                $(id + " .mainNotifyWijetWrap .notifyIndicator").css("visibility", "hidden");
+            } else if (this.texts.length < 10) {
+                $(id + " .mainNotifyWijetWrap .notifyIndicator").css("visibility", "visible");
+                $(id + " .mainNotifyWijetWrap .notifyIndicator").text(this.texts.length);
+            } else {
+                $(id + " .mainNotifyWijetWrap .notifyIndicator").css("visibility", "visible");
+                $(id + " .mainNotifyWijetWrap .notifyIndicator").text("9+");
+            }
+        }
+
+        if (options.ESPSettings[espNumb].pins[pin] == false) {
+            this.isSignalFirst = true;
+        }
+
+        if (options.ESPSettings[espNumb].isOnline) {
+            $(id + " .offline").hide();
+        } else {
+            $(id + " .offline").show();
+        }
+    }
+}
+
 
 
 // flower

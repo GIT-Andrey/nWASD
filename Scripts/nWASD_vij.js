@@ -20,7 +20,7 @@ function navRightContainerRender() {
     } else if (navStatus == 1) {
         if ($("body").width() < 575) {
             for (let i = 0; i < autowateringWijetsNumb; i++) {
-                $("<div class=\"mainVidjetContainer\" id=\"wjMain-" + i + "\"><div class=\"vidjetImg\"><img src=\"../Images/" + i + "-g.jpg\" alt=\"\"></div><i class=\"fas fa-plus\" id=\"wj-" + i + "\"></i><span>" + wijetMass[1][i].title + "</span></div>").appendTo(".rightMenuPanel .vidgetsContainer");
+                $("<div class=\"mainVidjetContainer\" id=\"wjMain-" + i + "\"><div class=\"vidjetImg\"><img src=\"../Images/" + i + "-g.jpg\" alt=\"\"></div><i class=\"fas fa-plus\" id=\"wj-" + i + "\"></i></div>").appendTo(".rightMenuPanel .vidgetsContainer");
                 $("#wj-" + i).click(wjClick);
                 $("#wjMain-" + i).css("max-width", "200px");
                 $("#wjMain-" + i).css("background", wijetMass[1][i].background);
@@ -28,7 +28,7 @@ function navRightContainerRender() {
             }
         } else {
             for (let i = 0; i < autowateringWijetsNumb; i++) {
-                $("<div class=\"mainVidjetContainer\" id=\"wjMain-" + i + "\"><div class=\"vidjetImg\"><img src=\"../Images/" + i + "-g.jpg\" alt=\"\"></div><i class=\"fas fa-plus\" id=\"wj-" + i + "\"></i><span>" + wijetMass[1][i].title + "</span></div>").appendTo(".navPanelRight .vidgetsContainer");
+                $("<div class=\"mainVidjetContainer\" id=\"wjMain-" + i + "\"><div class=\"vidjetImg\"><img src=\"../Images/" + i + "-g.jpg\" alt=\"\"></div><i class=\"fas fa-plus\" id=\"wj-" + i + "\"></i></div>").appendTo(".navPanelRight .vidgetsContainer");
                 $("#wj-" + i).click(wjClick);
                 $("#wjMain-" + i).css("max-width", "200px");
                 $("#wjMain-" + i).css("background", wijetMass[1][i].background);
@@ -208,6 +208,10 @@ function wjClick() {
                 break;
             case 38:
                 wijet = new Interval(wijetMass[0][targetWijet].html, wijetMass[0][targetWijet].title, 0, undefined, undefined, "(00:00 - 00:00) / 1", "0 - 0/1", "interval");
+                allWijets[navStatus][activeNavLeft].push(wijet);
+                break;
+            case 39:
+                wijet = new Notify(wijetMass[0][targetWijet].html, wijetMass[0][targetWijet].title, 0, undefined, undefined, "текст уведомления {}", undefined, "notify");
                 allWijets[navStatus][activeNavLeft].push(wijet);
                 break;
             default:
