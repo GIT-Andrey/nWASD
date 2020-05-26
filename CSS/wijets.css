@@ -22,9 +22,20 @@
 
 @import "./wijets/timer.css";
 
+/* Виджеты nWASD grow */
+
+@import "./wijets/growWijets.css";
+
 .mainWijetWrap {
     height: 130px;
     overflow: hidden;
+}
+
+.mainGrowWijetWrap {
+    height: 100%;
+    width: 100%;
+    background: #303952;
+
 }
 
 .downMenuWrap {

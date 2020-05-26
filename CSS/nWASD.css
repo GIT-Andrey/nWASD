@@ -724,15 +724,16 @@ body::-webkit-scrollbar {
   display: inline-block;
   border: 1px solid #1e2234;
   border-radius: 2px;
-  height: 200px;
+  height: 250px;
   overflow: hidden;
   background: #202020;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  width: 50%;
 }
 
 .blockContainer .growItem .offlineGrow {
-  height: 130px;
+  height: 250px;
   position: relative;
   background: rgba(0, 0, 0, 0.5);
   margin-top: -148px;
@@ -928,6 +929,7 @@ body::-webkit-scrollbar {
   margin-top: 30px;
   height: calc(100vh - 80px);
   overflow-y: scroll;
+  padding: 0 10px;
 }
 
 @media all and (max-width: 991px) {
@@ -973,8 +975,7 @@ body::-webkit-scrollbar {
 .serverContainerItem {
   max-width: 350px;
   background: #4b6584;
-  margin-left: 10px;
-  margin-top: 15px;
+  margin: 15px 10px 0 0;
   border-radius: 6px;
   -webkit-box-shadow: 0 0 10px 5px #00000049;
           box-shadow: 0 0 10px 5px #00000049;
@@ -982,12 +983,6 @@ body::-webkit-scrollbar {
   overflow: hidden;
   padding-bottom: 5px;
   vertical-align: top;
-}
-
-@media all and (max-width: 575px) {
-  .serverContainerItem {
-    margin: 15px 0 0 15px;
-  }
 }
 
 .serverContainerItem .serverContainerItemTitle {

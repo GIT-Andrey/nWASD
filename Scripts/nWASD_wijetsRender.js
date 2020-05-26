@@ -220,7 +220,7 @@ let userSettings = {
 };
 
 function wijetsRender() {
-    $(".blockContainer").html('');
+    // $(".blockContainer").html('');
     if (navStatus == 0 || navStatus == 1) {
         flatsNumb = allWijets[navStatus].length;
         navLeftContainerRender();
