@@ -1,4 +1,96 @@
-.mainSliderWijetWrap {
+.growButtonWrap {
+  width: 140px;
+  height: 70px;
+  background: #3498db;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 26px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  border-radius: 10px;
+}
+
+.growButtonWrap:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: scale(0.96);
+          transform: scale(0.96);
+}
+
+.growButtonWrap:hover {
+  height: 60px;
+}
+
+.growButtonWrap i {
+  z-index: 2;
+  margin-bottom: 30px;
+}
+
+.growButtonWrap .waterBackground {
+  width: 140px;
+  height: 20px;
+  position: absolute;
+  overflow: hidden;
+  z-index: 1;
+  border-radius: 0 0 10px 10px;
+  -webkit-transition: 10s;
+  transition: 10s;
+}
+
+.growButtonWrap .waterBackground .waveBackground {
+  height: 100%;
+  width: 100%;
+  background: #fff;
+}
+
+.growButtonWrap .waterBackground .wave1 {
+  height: 20px;
+  width: 100%;
+  background: url(../../Images/wave_top.png) repeat-x;
+  background-size: cover;
+  -webkit-animation: wave linear infinite 20s;
+          animation: wave linear infinite 20s;
+}
+
+.growButtonWrap .waterBackground .wave2 {
+  height: 20px;
+  width: 100%;
+  background: url(../../Images/wave_top_opacity.png) repeat-x;
+  background-size: cover;
+  -webkit-animation: wave linear infinite 13s;
+          animation: wave linear infinite 13s;
+  margin-top: -20px;
+}
+
+@-webkit-keyframes wave {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: 1938px;
+  }
+}
+
+@keyframes wave {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: 1938px;
+  }
+}
+
+.clock {
+  width: 100px;
+  height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8,5 +100,69 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: url(../../Images/clock.png);
+  background-size: cover;
+  border: 4px solid #00d2d3;
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2), inset 0 0 6px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 6px rgba(0, 0, 0, 0.2), inset 0 0 6px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+
+.clock:before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  position: absolute;
+  background: #fff;
+  z-index: 3;
+}
+
+.clock .hour, .clock .min {
+  position: absolute;
+}
+
+.clock .hour, .clock .hr {
+  width: 60px;
+  height: 60px;
+}
+
+.clock .min, .clock .mn {
+  width: 80px;
+  height: 80px;
+}
+
+.clock .hr, .clock .mn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.clock .hr:before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 30px;
+  background: #48dbfb;
+  border-radius: 1.5px;
+}
+
+.clock .mn:before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 40px;
+  background: #ff6b6b;
+  border-radius: 1px;
+}
+
+.clock .hr {
+  -webkit-transform: rotate(60deg);
+          transform: rotate(60deg);
 }
 /*# sourceMappingURL=growWijets.css.map */
